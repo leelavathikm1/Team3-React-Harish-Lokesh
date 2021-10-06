@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  -->
+    <script>
+        // call() method
+      
+        var add=function(c,d){
+            console.log(this.a + this.b + c+d)
+        }
+        var result={
+            a:3,
+            b:5
+        }
+      
+        add.call(result ,2,1)
+
+        //Exmp2
+        var person={
+            fName:"Leela",
+            lName:"KM"
+        }
+         var printFullName=function(city,state){
+             console.log(this.fName + this.lName + " " + city + " " +state )
+         }
+         printFullName.call(person,"Blr","Karnataka")
+         
+         var person2={
+             fName:"Harish",
+             lName:"Reddy"
+         }
+
+         var person3={
+             fName:"Abi",
+             lName:"rami"
+         }
+
+
+         //function Borrowing
+         printFullName.call(person2, "CTR", "AP")
+
+         //Apply() Method 
+        //  printFullName.apply(person3,["Pollachi","coimbatore"])
+
+         //Bind() Method
+
+         var printMyName = printFullName.bind(person3,"Pollachi","coimbatore")
+         console.log(printMyName)
+         printMyName();
+         
+
+
+
+
+    </script>
+</body>
+</html>
